@@ -1,0 +1,22 @@
+import random
+
+try_count = 0
+
+number_to_guess = random.randint(1, 100)
+
+while True:
+
+    try:
+        user_guess = int(input("Guess the number between 1 and 100: "))
+
+        if user_guess > number_to_guess:
+            try_count += 1
+            print("too high!")
+        elif user_guess < number_to_guess:
+            try_count += 1
+            print("too low!")
+        else:
+            print(f"Congradulations you guessed the number in {try_count} attempts!")
+            break
+    except ValueError:
+        print("please enter valid input")
