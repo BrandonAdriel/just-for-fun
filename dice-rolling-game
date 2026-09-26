@@ -1,0 +1,19 @@
+import random
+
+double_count = 0
+
+while True:
+    choice = input("roll the dice? (y/n): ").lower()
+    if choice == "y":
+        die_1 = random.randint(1, 6)
+        die_2 = random.randint(1, 6)
+        print(f"you rolled a {die_1} and a {die_2}")
+        if die_1 == die_2:
+            double_count += 1
+            print("you rolled a double!")
+    elif choice == "n":
+        print("Thank you for playing")
+        print(f"you rolled {double_count} doubles!")
+        break
+    else:
+        print("invalid choice!")
