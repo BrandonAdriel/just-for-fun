@@ -1,0 +1,57 @@
+print("== Grade calculator ==")
+
+exam_count = 0
+total_mark = 0
+band_performance = None
+while True:
+    try:
+        exam_total = int(input("what was the exam out of?: "))
+        if exam_total > 1:
+            exam_count += 1
+        elif exam_total <= 0:
+            break
+   
+        exam_mark = float(input("please enter what you got: "))
+
+    except ValueError:
+        print("Please enter valid input")
+
+    total_mark += exam_mark
+
+    percentage = (exam_mark / exam_total) * 100
+
+    if percentage >= 90:
+        band_performance = "6"
+    elif percentage >= 80:
+        band_performance = "5"
+    elif percentage >= 70:
+        band_performance = "4"
+    elif percentage >= 60:
+        band_performance = "3"
+    elif percentage >= 50:
+        band_performance = "2"
+    elif percentage >= 0:
+        band_performance = "1"
+
+    print(f"you got {percentage}% \nthats a band {band_performance}!")
+
+        
+
+final_grade = float.__round__(total_mark / exam_count)
+
+total_band_performance = None
+
+if final_grade >= 90:
+    total_band_performance = "6"
+elif final_grade >= 80:
+    total_band_performance = "5"
+elif final_grade >= 70:
+    total_band_performance = "4"
+elif final_grade >= 60:
+    total_band_performance = "3"
+elif final_grade >= 50:
+    total_band_performance = "2"
+elif final_grade >= 0:
+    total_band_performance = "1"
+
+print(f"your final grade is {final_grade}% \nthats a band {total_band_performance}!")
